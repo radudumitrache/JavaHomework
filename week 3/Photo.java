@@ -40,9 +40,17 @@ public class Photo
 	{
 		return this.people;
 	}
+	public void setPeople( List<String> people)
+	{
+		this.people=people;
+	}
 	public int getDpi ()
 	{
 		return dpi;
+	}
+	public void setDpi(int dpi)
+	{
+		this.dpi=dpi;
 	}
 	public void setPeople(List<String> people)
 	{

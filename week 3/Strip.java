@@ -101,6 +101,10 @@ public class Strip
 	{
 		this.dimmer = dimmer;
 	}
+	public void setDimmerPercentage(int percentage)
+	{
+		this.dimmer=percentage*255/100;
+	}
 	
 	
 	
@@ -117,28 +121,36 @@ public class Strip
 				case "Red":
 				{
 					this.red=255;
+					this.green=0;
+					this.blue=0;
 					break;
 				}
 				case "Green":
 				{
 					this.green=255;
+					this.red=0;
+					this.blue=0;
 					break;
 				}
 				case "Blue":
 				{
 					this.blue=255;
+					this.red=0;
+					this.green=0;
 					break;
 				}
 				case "Purple":
 				{
 					this.red=255;
 					this.blue=255;
+					this.green=0;
 					break;
 				}
 				case "Orange":
 				{
 					this.red=255;
 					this.green=165;
+					this.blue=0;
 					break;
 				}
 				case "Sun":
@@ -160,7 +172,22 @@ public class Strip
 		
 		
 	}
-	
+	public String getTextColor()
+	{
+		if (this.red==255 && this.green==0 && this.blue==0)
+			return "Red";
+		if (this.red==0 && this.green==255 && this.blue==0)
+			return "Green";
+		if (this.red==0 && this.green==0 && this.blue==255)
+			return "Blue";
+		if (this.red==255 && this.green==255 && this.blue==0)
+			return "Purple";
+		if (this.red==255 && this.green==165 && this.blue==0)
+			return "Orange";
+		if (this.red==201 && this.green==141 && this.blue==0)
+			return "Sun";
+		return "No color found";
+	}
 	public String getSpecificColor(int index)
 	{
 		return this.colors.get(index - 1);
@@ -168,6 +195,13 @@ public class Strip
 	public boolean isValid(String colorText)
 	{
 		return this.colors.contains(colorText);
+	}
+	public boolean isValid()
+	{
+		if (this.red>=0 && this.red<=255 && this.green>=0 && this.green<=255 && this.blue>=0 && this.blue<=255)
+			return true;
+		return false;
+		
 	}
 	
 	
