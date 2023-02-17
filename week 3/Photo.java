@@ -14,19 +14,31 @@ public class Photo
 	}
 	public int getLength()
 	{
-		return length;
+		return this.length;
+	}
+	public void setLenght(int length)
+	{
+		this.length=length;
 	}
 	public int getWidth()
 	{
-		return width;
+		return this.width;
+	}
+	public void setWidth(int width)
+	{
+		this.width=width;
 	}
 	public String getDescription()
 	{
-		return description;
+		return this.description;
+	}
+	public void setDescription(String description)
+	{
+		this.description=description;
 	}
 	public List<String> getPeople()
 	{
-		return people;
+		return this.people;
 	}
 	public int getDpi ()
 	{
@@ -47,14 +59,14 @@ public class Photo
 	}
 	public boolean isGroupPhoto()
 	{
-		if (people.size()>1)
+		if (this.people.size()>1)
 			return true;
 		else
 			return false;
 	}
 	public boolean isPrintable()
 	{
-		if (dpi>=150 && width>=585 && length>=878)
+		if (this.dpi>=150 && this.width>=585 && this.length>=878)
 			return true;
 		else
 			return false;

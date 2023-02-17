@@ -74,6 +74,8 @@ public class Television
 		if (this.isLocked==false)
 		{
 			this.channel++;
+			if (this.channel>75)
+				this.channel=75;
 		}
 		else
 			System.out.println("please unlock televivision");
@@ -83,7 +85,8 @@ public class Television
 		if (isLocked==false)
 		{
 			this.channel--;
-			
+			if (this.channel<1)
+				this.channel=1;
 		}
 		else
 			System.out.println("please unlock televivision");
@@ -100,9 +103,13 @@ public class Television
 	public void increaseVolume()
 	{
 		this.volume++;
+		if (this.volume>100)
+			this.volume=100;
 	}
 	public void decreaseVolume()
 	{
 		this.volume--;
+		if (this.volume<0)
+			this.volume=0;
 	}
 }
